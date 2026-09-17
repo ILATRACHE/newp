@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "newp"
+version = "0.1.0"
+description = "A smart Python CLI for creating and configuring projects"
+requires-python = ">=3.8"
+dependencies = [
+    "colorama",
+]
+
+[project.scripts]
+newp = "main:main"
+
+[tool.setuptools]
+py-modules = ["main", "cli", "engine", "config", "safety"]
+
+[tool.setuptools.packages.find]
+include = ["recipes*"]
