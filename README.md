@@ -1,4 +1,8 @@
+# NEWP
+
 **NEWP** is a simple CLI tool for creating and setting up projects.
+
+> ⚠️ Currently supported on **Windows only**.
 
 ## Installation
 
@@ -37,17 +41,18 @@ NEWP can create a Python project with:
 
 ### Supported Frameworks
 
-* FastAPI
+* **FastAPI**
 
   * `fastapi`
   * `uvicorn`
 
-* Flask
+* **Flask**
 
   * `flask`
 
 ## Requirements
 
+* Windows
 * Python 3.8+
 * Git
 
