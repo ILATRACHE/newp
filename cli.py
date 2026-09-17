@@ -11,7 +11,7 @@ def choose_recipe_name():
     choice = input("please choose : \n" \
     "1.python\n" \
     "2.React\n" \
-    "3.C++").upper()
+    "3.C++\n").upper()
     if choice.upper() in ["2"  , "REACT" , 'R'] :
         recipe_name ="React"
     elif choice.upper() in ['3' , "C" , "C++"] :
@@ -98,17 +98,17 @@ def collect_user_input():
     
         
 def display_review(config , safety_report):
-    print(config.project_name)
-    print(config.location)
+    print('project name : ',config.project_name)
+    print("location : " ,config.location)
     if safety_report != [] :
-        print(safety_report) 
-    print(config.recipe_name)
-    print(config.recipe_option)
-    print(config.status)
+        print('report : \n',safety_report) 
+    print("language : " , config.recipe_name)
+    print("framework : ",config.recipe_option)
+    print("status : " ,config.status)
     choice = input("please choose : \n" \
         "1.continu\n" \
         "2.modifier\n" \
-        "3.exit").lower()
+        "3.exit\n").lower()
     if choice in ["1" , 'c' , 'continu'] : 
         return True
     elif choice in ["2" , 'm' , 'modifier']:
