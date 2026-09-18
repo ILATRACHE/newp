@@ -1,61 +1,109 @@
-# NEWP
+# NEWP 🚀
 
-**NEWP** is a simple CLI tool for creating and setting up projects.
+**NEWP** is a smart CLI tool that eliminates repetitive project setup. It instantly creates structured, production-ready projects with dependencies installed, Git initialized, and best practices applied.
 
-> ⚠️ Currently supported on **Windows only**.
+> ⚠️ **Note:** Currently optimized for **Windows**. macOS/Linux support coming soon.
 
-## Installation
+---
 
-Clone the repository:
+## ⚡ Quick Start
 
-```bash
-git clone https://github.com/ILATRACHE/newp.git
-cd newp
-```
+Once installed, you can use **NEWP** in two ways:
 
-Install NEWP:
-
-```bash
-python -m pip install .
-```
-
-After installation, you can use `newp` from any terminal:
-
+### 1. Interactive Mode (Wizard)
+Perfect for beginners or when you want to explore options.
 ```bash
 newp
 ```
+*Follow the on-screen questions to configure your project.*
 
-## Current Features
+### 2. Quick Mode (One-Liner)
+For experts who know exactly what they want.
+```bash
+# Syntax: newp <project-name> <language> [framework] [git-flag]
 
-### Python Projects
+# Create a Python FastAPI project with Git
+newp my-app python fastapi yes
 
-NEWP can create a Python project with:
+# Create a Python Flask project (No Git)
+newp my-app python flask no
 
-* Virtual environment
-* Git repository
-* `src/` folder
-* `test/` folder
-* `main.py`
-* `requirements.txt`
-* `.gitignore`
+# Create a basic Python project (No framework, No Git)
+newp my-app python
+```
 
-### Supported Frameworks
+---
 
-* **FastAPI**
+## 📦 Installation
 
-  * `fastapi`
-  * `uvicorn`
+### Option A: Install via Pip (Recommended)
+Install the latest version directly from GitHub:
+```bash
+pip install git+https://github.com/ILATRACHE/newp.git
+```
 
-* **Flask**
+### Option B: Local Development Install
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ILATRACHE/newp.git
+   cd newp
+   ```
+2. Install in editable mode:
+   ```bash
+   pip install -e .
+   ```
 
-  * `flask`
+---
 
-## Requirements
+## ✨ Current Features
 
-* Windows
-* Python 3.8+
-* Git
+### 🐍 Python Projects
+NEWP creates a complete Python environment including:
+- ✅ **Virtual Environment** (`venv/`) automatically created and activated.
+- ✅ **Git Repository** initialized (optional).
+- ✅ **Smart Structure**: `src/`, `tests/`, `main.py`.
+- ✅ **Dependencies**: `requirements.txt` generated and installed.
+- ✅ **Clean Git**: Pre-configured `.gitignore` (ignores `venv/`, `__pycache__`, `.env`).
 
-## Status
+### 🛠 Supported Frameworks
+| Framework | Packages Installed | Description |
+| :--- | :--- | :--- |
+| **FastAPI** | `fastapi`, `uvicorn` | Modern, high-performance web API framework. |
+| **Flask** | `flask` | Lightweight and flexible micro-web framework. |
+| **None** | *(Empty)* | Bare-bones structure for custom setups. |
 
-🚧 NEWP is currently under development.
+---
+
+## 📋 Requirements
+
+Before using NEWP, ensure you have:
+- **OS**: Windows (Tested on Windows 10/11)
+- **Python**: Version 3.8 or higher
+- **Git**: Installed and added to PATH
+
+---
+
+## 🗺️ Roadmap & Status
+
+**Current Version:** `v0.1.1`
+
+- [x] Interactive Wizard Mode
+- [x] Quick Mode (CLI Arguments)
+- [x] Python Support (FastAPI, Flask)
+- [x] Auto-dependency installation
+- [x] Smart `.gitignore` generation
+- [ ] React / Node.js Support
+- [ ] C++ / CMake Support
+- [ ] macOS & Linux Support
+- [ ] Custom Template Registry
+
+---
+
+## 🐛 Reporting Issues
+
+Found a bug or have a feature request? Please open an issue on the [GitHub Issues](https://github.com/ILATRACHE/newp/issues) page.
+
+---
+
+**Built by [ILATRACHE](https://github.com/ILATRACHE)**
+```
