@@ -46,7 +46,44 @@ def choose_recipe_option(recipe_name):
             
     return recipe_option
                 
-            
+
+def run_quick_mod(argv):
+    project_name = argv[1]
+    location = project_name
+    recipe_name = argv[2]
+    status = "running"
+    git=False
+    framework = None
+    if len(argv)>=4 : 
+        framework = argv[3].lower()
+        if framework in ["n" , "non" , "no"]:
+            framework = None
+    if len(argv)==5 :
+        gitt = argv[4].lower()
+        if gitt in ["y",'yes'] :
+            git = True
+        
+    
+    recipe_option = {"framework":framework,"Git":git}
+    config = ProjectConfiguration(project_name , location , recipe_name , recipe_option , status)
+    if recipe_name == "python" :
+                safety_report = []
+                recipe= PythonRecipe(recipe_option)
+                requirements = recipe.get_requirement()
+                rq = check_system_requirements(requirements)
+                if rq["safe"] == False : 
+                    print(rq["missing"])
+                    return None
+                structure = recipe.get_structure()
+                sd = scan_directory(location , structure)
+                if sd["safe"] == False : 
+                    safety_report.append(sd["conflicts"])
+    else :
+            print('wait for updates')
+            return None
+    
+    return config ,recipe
+         
 
     
 
