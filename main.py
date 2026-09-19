@@ -17,15 +17,15 @@ def main():
             resultat = run_quick_mod(argv)
             if resultat is None :
                 exit(0)
-            config = resultat[0]
-            recipe = resultat[1]
-            success = execute_setup(config , recipe)
+        config = resultat[0]
+        recipe = resultat[1]
+        success = execute_setup(config , recipe)
         
-            if not success :
-                print("set up fail. check .newp/setup.log for details.")
-                exit(1)
-            print("project created successfully!")
-            exit(0)
+        if not success :
+            print("set up fail. check .newp/setup.log for details.")
+            exit(1)
+        print("project created successfully!")
+        exit(0)
     except KeyboardInterrupt:
                 print("\nNEWP cancelled.")
                 exit(0)
